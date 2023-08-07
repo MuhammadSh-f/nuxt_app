@@ -1,8 +1,16 @@
 <template>
   <div>
     <header class="shadow-sm bg-white">
-      <nav class="container mx-auto p-4 flex justify-between">
-        <NuxtLink to="/" class="font-bold">Task Manager</NuxtLink>
+      <nav class="container mx-auto p-4">
+        <NuxtLink to="/tasks">Task Manager</NuxtLink>
+      </nav>
+    </header>
+    <!-- Output the page content-->
+    <div class="container mx-auto p-4">
+      <slot />
+    </div>
+    <div>
+      <footer class="container mx-auto p-4 flex justify-between border-t-2">
         <ul class="flex gap-4">
           <li>
             <NuxtLink to="/">Home</NuxtLink>
@@ -11,14 +19,10 @@
             <NuxtLink to="/about">About</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/tasks" class="btn">Tasks</NuxtLink>
+            <NuxtLink to="/tasks">Tasks</NuxtLink>
           </li>
         </ul>
-      </nav>
-    </header>
-    <!-- Output the page content-->
-    <div class="container mx-auto p-4">
-      <slot />
+      </footer>
     </div>
   </div>
 </template>

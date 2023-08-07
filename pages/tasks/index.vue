@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h2>Products</h2>
+    <h2>Tasks</h2>
     <div class="grid grid-cols-4 gap-5">
-      <div v-for="p in data.tasks">
-        <ProductCard :product="p" />
+      <div v-for="p in tasks">
+        <taskCard :task="p" />
       </div>
     </div>
   </div>
@@ -11,16 +11,16 @@
 
 <script setup>
 definePageMeta({
-  layout: "products",
+  layout: "tasks",
 });
 
-const { data } = useFetch(
+const { data } = await useFetch(
   "https://task-manager-api-w9ye.onrender.com/api/v1/tasks"
 );
-console.log(data);
+const tasks = data._rawValue.tasks;
 
 useHead({
-  title: "Nuxt Dojo | Merch",
+  title: "Task Manager | Tasks",
   meta: [{ name: "description", content: "Nuxt 3 Merch" }],
 });
 </script>
