@@ -12,12 +12,12 @@
       libero reprehenderit dignissimos ipsa! Laboriosam hic obcaecati laborum
       quo.
     </p>
-    <div>{{ data }}</div>
+    <!-- <div>{{ data }}</div> -->
   </div>
 </template>
 
 <script setup>
-const { data } = await useFetch("/api/currency/GBP");
+// const { data } = await useFetch("/api/currency/GBP");
 </script>
 
 <style scoped>

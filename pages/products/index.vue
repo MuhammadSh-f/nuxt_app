@@ -2,7 +2,7 @@
   <div>
     <h2>Products</h2>
     <div class="grid grid-cols-4 gap-5">
-      <div v-for="p in products">
+      <div v-for="p in data.tasks">
         <ProductCard :product="p" />
       </div>
     </div>
@@ -14,8 +14,10 @@ definePageMeta({
   layout: "products",
 });
 
-const { data } = await useFetch("https://dummyjson.com/products");
-const products = data._rawValue.products;
+const { data } = useFetch(
+  "https://task-manager-api-w9ye.onrender.com/api/v1/tasks"
+);
+console.log(data);
 
 useHead({
   title: "Nuxt Dojo | Merch",
