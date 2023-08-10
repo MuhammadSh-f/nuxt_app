@@ -1,7 +1,11 @@
 <template>
   <div class="card text-center">
+    <!-- <button
+      class="material-symbols-outlined rounded"
+      :onclick="() => deleteTask()">
+      delete
+    </button> -->
     <h2 class="font-bold text-gray-500 m-4 truncate">{{ task.name }}</h2>
-    <h3 class="font-bold text-gray-500 m-4 truncate">{{ task.completed }}</h3>
     <NuxtLink :to="`/tasks/${task._id}`">
       <p class="btn my-4">View Details</p>
     </NuxtLink>
